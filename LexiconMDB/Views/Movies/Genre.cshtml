@@ -1,0 +1,45 @@
+﻿@model IEnumerable<LexiconMDB.Models.Movie>
+
+@{
+    ViewBag.Title = "Genre";
+}
+
+<h2>Genre: @ViewBag.Genre</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Length)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.AgeLimit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaScore)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LengthInHours)
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.AgeLimit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MetaScore)
+        </td>        
+    </tr>
+}
+
+</table>
+
+<p>@ViewBag.ResultMessage</p>
